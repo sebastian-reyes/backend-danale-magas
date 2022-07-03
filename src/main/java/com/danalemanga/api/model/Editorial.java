@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "editoriales")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Editorial {
+public class Editorial implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +26,9 @@ public class Editorial {
 
     @Column(columnDefinition = "TEXT")
     private String descripcion;
+
+    /**
+    *
+    */
+    private static final long serialVersionUID = 1L;
 }
