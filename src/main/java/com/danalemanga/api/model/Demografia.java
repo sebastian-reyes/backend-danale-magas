@@ -19,8 +19,8 @@ public class Demografia implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_demografia;
 
-    @Column(length = 60,unique = true)
-    private String nombre_demografia;
+    @Column(length = 60,unique = true, name = "nombre_demografia")
+    private String nombre;
 
     @Column(columnDefinition = "TEXT")
     private String descripcion;
