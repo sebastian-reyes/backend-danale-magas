@@ -23,6 +23,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/").permitAll()
                 .antMatchers(HttpMethod.POST, "/usuarios/registro/cliente").permitAll()
+                .antMatchers(HttpMethod.GET,"/mangas/page/*").permitAll()
+                .antMatchers(HttpMethod.GET,"/mangas/*").permitAll()
+                .antMatchers(HttpMethod.GET,"/mangas/foto/*").permitAll()
                 .anyRequest().authenticated()
                 .and().cors().configurationSource(corsConfigurationSource());
     }
